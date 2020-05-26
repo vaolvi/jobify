@@ -1,8 +1,11 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+
+const path = require('path')
+
 const sqlite = require('sqlite3').verbose()
-const dbConnection = new sqlite.Database('./banco.db', { Promise })
+const dbConnection = new sqlite.Database(path.resolve(__dirname, './banco.db'), { Promise })
 
 const port = process.env.PORT || 3000
 
