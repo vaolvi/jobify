@@ -1,0 +1,31 @@
+<%- include('header') %>
+<div class="main">
+  <div class="cabecalho">
+    <h2>
+      Editar vaga:
+      <a class='button' href="/admin/vagas">Vagas</a>
+    </h2>
+  </div>
+  <div class="div">
+    <form method="POST">
+      <% vaga.forEach(vag => { %>
+        <label for="titulo">Titulo:</label>
+        <input type="text" name="titulo" id='titulo' value='<%= vag['titulo'] %>'>
+        <label for="descricao">Descrição:</label>
+        <textarea name="descricao" id="descricao"><%= vag.descricao %></textarea>
+        <label for="categoria">Categoria:</label>
+        <select name="categoria" id="categoria">
+          <% categorias.forEach(categoria => { %>
+          <option value=<%- categoria.id %> <% if (categoria.id==vag.categoria) { %>
+            selected
+          <% } %>><%= categoria.categoria %></option>
+          <% }) %>
+        </select>
+      <% }) %>
+      <div class="button2">
+        <button>Salvar vaga</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include ('footer') %>

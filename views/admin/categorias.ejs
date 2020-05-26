@@ -1,0 +1,21 @@
+<%- include('header') %>
+  <div class="main">
+    <div class="cabecalho">
+      <h2>
+        Admin Categorias:
+        <a class='button' href="/admin/categorias/nova">Nova Categoria</a>
+      </h2>
+    </div>
+    <div>
+      <ul>
+        <% categorias.forEach(categoria => {%> 
+          <li class="li-vagas">
+            <a class="a-button btn-red" href="/admin/categorias/delete/<%- categoria.id %>">Excluir</a>
+            <a class="a-button btn-yellow" href="/admin/categorias/update/<%- categoria.id %>">Editar</a> |
+            <%- categoria.categoria %>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+<%- include ('footer') %>

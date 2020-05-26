@@ -1,0 +1,21 @@
+<%- include('header') %>
+<div class="main">
+  <div class="cabecalho">
+    <h2>
+      Editar categoria:
+      <a class='button' href="/admin/categorias">Categorias</a>
+    </h2>
+  </div>
+  <div class="div">
+    <form method="POST">
+      <% categoria.forEach(cat => { %>
+        <label for="categoria">Categoria:</label>
+        <input type="text" name="categoria" id='categoria' value='<%= cat['categoria'] %>'>
+      <% }) %>
+      <div class="button2">
+        <button>Salvar vaga</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include ('footer') %>

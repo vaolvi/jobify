@@ -1,0 +1,21 @@
+<%- include('header') %>
+  <div class="main">
+    <div class="cabecalho">
+      <h2>
+        Admin Vagas:
+        <a class='button' href="/admin/vagas/nova">Nova vaga</a>
+      </h2>
+    </div>
+    <div>
+      <ul>
+        <% vaga.forEach(vaga => {%> 
+          <li class="li-vagas">
+            <a class="a-button btn-red" href="/admin/vagas/delete/<%- vaga.id %>">Excluir</a>
+            <a class="a-button btn-yellow" href="/admin/vagas/update/<%- vaga.id %>">Editar</a> |
+            <%- vaga.titulo %>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+<%- include ('footer') %>
